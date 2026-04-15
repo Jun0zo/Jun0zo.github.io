@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { dict, type Project } from "@/data/portfolio";
-import { sitePath } from "@/lib/site-path";
 import {
   DEFAULT_PORTFOLIO_CONTROLS,
   type PortfolioControls,
@@ -28,6 +27,7 @@ import {
   loadPortfolioControls,
   normalizePortfolioControls,
 } from "@/data/portfolioControls";
+import ChatBot from "@/components/ChatBot";
 
 // --- Inline Custom Brand Icons ---
 const GithubIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
@@ -210,7 +210,7 @@ function DetailSidebar({ selectedItem, controls, onClose }: { selectedItem: Deta
   const isPublication = ["Publications", "학술 및 연구 성과", "Publication"].includes(selectedItem.type || "");
   const primaryLinkLabel = ['Publication', 'Publications'].includes(selectedItem.type || "") ? "Read Full Paper" : "Access Repository";
   const primaryLinkJSX = selectedItem.href && getContentVisible(controls, itemId, "primaryLink") ? (
-    <div className={isPublication ? "mb-12" : "mt-24"}><a href={sitePath(selectedItem.href)} target="_blank" rel="noreferrer" className="flex items-center justify-between p-8 bg-[#FF6B4A] text-white rounded-[40px] font-black uppercase tracking-widest text-sm hover:scale-[1.02] transition-all shadow-2xl shadow-[#FF6B4A]/40 active:scale-95"><span>{primaryLinkLabel}</span><ArrowRight size={28} /></a></div>
+    <div className={isPublication ? "mb-12" : "mt-24"}><a href={selectedItem.href} target="_blank" rel="noreferrer" className="flex items-center justify-between p-8 bg-[#FF6B4A] text-white rounded-[40px] font-black uppercase tracking-widest text-sm hover:scale-[1.02] transition-all shadow-2xl shadow-[#FF6B4A]/40 active:scale-95"><span>{primaryLinkLabel}</span><ArrowRight size={28} /></a></div>
   ) : null;
 
   return (
@@ -234,7 +234,7 @@ function DetailSidebar({ selectedItem, controls, onClose }: { selectedItem: Deta
           </div>
         </div>
       ) : selectedItem.logo && getContentVisible(controls, itemId, "logo") ? (
-        <div className="mb-12 w-32 h-32 rounded-[32px] border border-gray-100 dark:border-white/10 p-4 bg-white dark:bg-white/5 shadow-xl flex items-center justify-center"><img src={sitePath(selectedItem.logo)} alt="Logo" className="w-full h-full object-contain rounded-xl" /></div>
+        <div className="mb-12 w-32 h-32 rounded-[32px] border border-gray-100 dark:border-white/10 p-4 bg-white dark:bg-white/5 shadow-xl flex items-center justify-center"><img src={selectedItem.logo} alt="Logo" className="w-full h-full object-contain rounded-xl" /></div>
       ) : null}
 
       <div className="w-24 h-1.5 bg-[#FF6B4A] mb-16 rounded-full" />
@@ -268,7 +268,7 @@ function DetailSidebar({ selectedItem, controls, onClose }: { selectedItem: Deta
 export default function Home() {
   const [lang, setLang] = useState<'ko' | 'en'>('ko');
   const [selectedItem, setSelectedItem] = useState<any>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [activeSection, setActiveSection] = useState<string>('top');
   const [mounted, setMounted] = useState(false);
   const [portfolioControls, setPortfolioControls] = useState<PortfolioControls>(() => normalizePortfolioControls(DEFAULT_PORTFOLIO_CONTROLS));
@@ -304,10 +304,9 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     setPortfolioControls(loadPortfolioControls());
-    const savedTheme = 'light';
+    const savedTheme = localStorage.theme || 'dark';
     setTheme(savedTheme);
-    localStorage.theme = savedTheme;
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     const syncPortfolioControls = () => setPortfolioControls(loadPortfolioControls());
     window.addEventListener('storage', syncPortfolioControls);
     window.addEventListener('focus', syncPortfolioControls);
@@ -331,7 +330,7 @@ export default function Home() {
             <div className="flex items-center gap-10">
               <Link href="#top" className="text-sm font-extrabold uppercase tracking-widest">Junyoung Jo</Link>
               <nav className="hidden lg:flex items-center gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                <Link href={sitePath("/graph")} className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#FF6B4A]/30 bg-[#FF6B4A]/5 text-[#FF6B4A] hover:bg-[#FF6B4A] hover:text-white transition-all shadow-sm font-bold"><Share2 size={12} strokeWidth={3} /> Knowledge Graph</Link>
+                <Link href="/graph" className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#FF6B4A]/30 bg-[#FF6B4A]/5 text-[#FF6B4A] hover:bg-[#FF6B4A] hover:text-white transition-all shadow-sm font-bold"><Share2 size={12} strokeWidth={3} /> Knowledge Graph</Link>
                 {['philosophy', 'education', 'experience', 'publications'].filter(id => id === 'philosophy' || getSectionVisible(portfolioControls, id as PortfolioSectionKey)).map(id => (
                   <Link key={id} href={`#${id}`} className="transition-colors hover:text-[#FF6B4A] text-gray-500 dark:text-gray-400">{id.toUpperCase()}</Link>
                 ))}
@@ -354,8 +353,8 @@ export default function Home() {
                 <div className="flex gap-4">{[{ href: "https://github.com/Jun0zo", icon: GithubIcon, title: "GitHub" }, { href: "https://www.linkedin.com/in/jun0zo", icon: LinkedinIcon, title: "LinkedIn" }, { href: "https://joon0zo.tistory.com", icon: BookOpen, title: "Tistory" }].map((btn, i) => (<a key={i} href={btn.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#FF6B4A] transition-all active:scale-95" title={btn.title}><btn.icon size={22} /></a>))}</div>
               </div>
             </div>
-            <div className="flex lg:flex-1 justify-center w-full mt-12 lg:mt-0">
-              <div className="relative w-full max-w-[380px] lg:max-w-[550px] aspect-square object-cover">
+            <div className="hidden lg:flex lg:flex-1 justify-center">
+              <div className="relative w-full max-w-[550px] aspect-square object-cover">
                 {/* Image with enhanced circular misty mask */}
                 <div 
                   className="relative w-full h-full"
@@ -365,10 +364,10 @@ export default function Home() {
                   }}
                 >
                   <Image 
-                    src={sitePath("/media/hero_me.jpeg")} 
+                    src="/media/hero_me.jpeg" 
                     alt="Junyoung Jo" 
                     fill 
-                    className="object-cover object-center scale-110 sm:scale-[1.15] lg:scale-125"
+                    className="object-cover object-center scale-125"
                     priority
                   />
                 </div>
@@ -436,6 +435,10 @@ export default function Home() {
                       </div>
                     )}
                     <h3 className="text-3xl md:text-4xl font-black uppercase italic mb-8 break-keep">{overriddenItem.id}</h3>
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 break-keep">{overriddenItem.title}</p>
+                    <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed break-keep font-medium italic">
+                      "{overriddenItem.description}"
+                    </p>
                     {overriddenItem.projects && (
                       <div className="flex flex-wrap gap-2 mt-8">
                         {item.projects.map((p: string, i: number) => (
@@ -493,7 +496,7 @@ export default function Home() {
                           </div>
 
                         <div className="h-16 w-16 md:h-24 md:w-24 shrink-0 rounded-2xl bg-white dark:bg-[#0D1117] border border-gray-100 dark:border-white/10 flex items-center justify-center p-2 md:p-3 shadow-sm">
-                          {item.logo && getContentVisible(portfolioControls, itemId, "logo") ? <img src={sitePath(item.logo)} alt="logo" className="w-full h-full object-contain rounded-lg" /> : <span className="text-xl font-black text-gray-300">{(item.school || item.company || item.venue || item.title).charAt(0)}</span>}
+                          {item.logo && getContentVisible(portfolioControls, itemId, "logo") ? <img src={item.logo} alt="logo" className="w-full h-full object-contain rounded-lg" /> : <span className="text-xl font-black text-gray-300">{(item.school || item.company || item.venue || item.title).charAt(0)}</span>}
                         </div>
                         <div className={`flex-1 grid gap-10 ${isPublication ? "lg:grid-cols-[1.5fr_3fr] md:grid-cols-[1fr_2fr]" : hasRightContent ? "md:grid-cols-[1.2fr_2fr]" : "grid-cols-1"}`}>
                           <div>
@@ -526,6 +529,7 @@ export default function Home() {
                               {/* Publications Images (Optional) */}
                               {section.id === "publications" && (() => {
                                 const visiblePubMedia = getVisibleMedia(portfolioControls, itemId, item.sidebarMedia || []);
+                                if (visiblePubMedia.length === 0) return null;
 
                                 return (
                                   <div className="hidden lg:grid grid-cols-3 gap-4 w-full h-[180px] items-center">
@@ -596,6 +600,7 @@ export default function Home() {
           )}
         </AnimatePresence>
       </div>
+      <ChatBot />
     </main>
   );
 }
