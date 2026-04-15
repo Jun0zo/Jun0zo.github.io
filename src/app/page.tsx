@@ -304,10 +304,10 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     setPortfolioControls(loadPortfolioControls());
-    const savedTheme = localStorage.theme === 'dark' ? 'dark' : 'light';
+    const savedTheme = 'light';
     setTheme(savedTheme);
     localStorage.theme = savedTheme;
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    document.documentElement.classList.remove('dark');
     const syncPortfolioControls = () => setPortfolioControls(loadPortfolioControls());
     window.addEventListener('storage', syncPortfolioControls);
     window.addEventListener('focus', syncPortfolioControls);
