@@ -38,14 +38,14 @@ export const dict = {
         projects: ['InsightFlow', 'TechGraph', 'openfolio']
       },
       { 
-        id: 'TRANSFER', images: ['/media/offroad-rl-origin.gif', '/media/dreamerv2-eval.png'],
+        id: 'TRANSFER', images: ['/media/screen_record_20231005.gif', '/media/dreamerv2-eval.png'],
         title: 'Seamless Intelligence Migration', 
         description: 'I bridge the gap between human intent and machine execution. Zero-loss transfer of tacit judgment.',
         label: 'CONTEXT → MACHINE',
         projects: ['Off-Road and Bokbunja', 'dreamerv2', '2stepED']
       },
       { 
-        id: 'AMPLIFY', images: ['/media/zone-layout.png', '/media/navy_cert_dashboard.png', '/media/snappo-memory-1.jpeg'],
+        id: 'AMPLIFY', images: ['/media/2steped-distribution.png', '/media/navy_cert_dashboard.png', '/media/snappo-memory-1.jpeg'],
         title: 'Scaling Human Capability', 
         description: 'I build the leverage that empowers individuals. Machines don’t replace you; they amplify you.',
         label: 'MACHINE → AMPLIFIED RESULT',
@@ -72,11 +72,11 @@ export const dict = {
       { slug: 'promptaes', period: '2024', track: 'research ai', title: 'PromptAES', role: 'Researcher', hook: 'Can large language models grade essays fairly without fine-tuning?', summary: 'Researched prompt-based automated essay scoring models to evaluate educational content efficiently.', outcomes: ['Automated essay score calculation pipeline'], stack: ['LLM', 'Prompt Engineering', 'Python'], visual: { src: '/media/promptaes-tsne.png', alt: 'PromptAES t-SNE visualization' }, sidebarMedia: [{ src: '/media/promptaes-tsne.png', alt: 'PromptAES t-SNE visualization', caption: 'Embedding structure view' }, { src: '/media/promptaes-prompt1.png', alt: 'PromptAES prompt score plot', caption: 'Prompt-level score distribution' }], evidence: ['JunOS node: Project Experience - PromptAES', 'Prompt-aware AES follow-up experiments', 'Related to the R2C / writing evaluation research line'], related: ['Project Experience - 2stepED', 'Project Experience - promptaes_web', 'Publication - NAACL Findings - R2C'] }
     ],
     publicationData: [
-      { slug: 'aes-multilayer-encoders', title: 'Automated Essay Scoring based on Multi-layer Encoders', authors: 'Jo, J., et al.', venue: "EMNLP", date: '2026', href: '/papers/automated-essay-scoring-based-on-multi-layer-encoders.pdf', details: 'Currently under review for EMNLP 2026. Proposes a novel AES framework utilizing multi-layer encoder architectures to capture hierarchical creativity and coherence in student essays.', logo: '/media/acl_logo.svg', sidebarMedia: [{ src: '/media/acl_logo.svg', alt: 'ACL logo' }], related: ['Project Experience - 2stepED', 'Project Experience - PromptAES'], evidence: ['EMNLP 2026 paper draft PDF', 'ACL conference identity asset', 'JunOS writing-evaluation research line'] },
+      { slug: 'aes-multilayer-encoders', title: 'Automated Essay Scoring based on Multi-layer Encoders', authors: 'Jo, J., et al.', venue: "EMNLP", date: '2026', details: 'Currently under review for EMNLP 2026. Proposes a novel AES framework utilizing multi-layer encoder architectures to capture hierarchical creativity and coherence in student essays.', logo: '' },
       { slug: 'r2c-naacl-2025', title: 'Representation-to-Creativity (R2C): Automated Holistic Scoring Model for Essay Creativity', authors: 'Kim, D., Jo, J., On, B.-W., & Lee, I.', venue: 'Findings of ACL: NAACL', date: 'Apr 2025', logo: '/media/naacl_logo.png', href: 'https://aclanthology.org/2025.findings-naacl.292/', sidebarMedia: [{ src: '/media/r2c-chart.png', alt: 'R2C Chart' }, { src: '/media/naacl-poster.png', alt: 'NAACL Poster' }, { src: '/media/2steped-distribution.png', alt: 'Score Distribution' }] },
-      { slug: 'purdue-drone-privacy-2024', title: 'Evaluating Privacy Infringement Level in Drone-Captured Images Using Privacy Image Quality Assessment Algorithms', authors: 'Jo, J., et al.', venue: 'Purdue University Research', date: 'Jun 2024', href: '/papers/purdue-drone-privacy-draft.pdf', details: 'Led the research and paper writing as team leader', logo: '/media/purdue_logo.png', sidebarMedia: [{ src: '/media/purdue-1.png', alt: 'Purdue Publication 1' }, { src: '/media/purdue-2.png', alt: 'Purdue Publication 2' }, { src: '/media/purdue-3.png', alt: 'Purdue Publication 3' }] },
-      { slug: 'offroad-farm-robot-2023', title: 'A Deep Reinforcement Learning Framework Considering Off-road Driving Environment for Autonomous Farm Robot', authors: 'Jo, J., et al.', venue: 'KIIT Conference', logo: '/media/kiit_logo.png', date: 'Nov 2023', href: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11651891', details: 'Gold Award, Undergraduate Thesis Competition' },
-      { slug: 'sentiment-aware-crawling-ieee-2021', title: 'Efficient Sentiment-Aware Web Crawling Methods for Constructing Sentiment Dictionary', authors: 'On, B.-W., Jo, J.-Y., Shin, H., Gim, J., Choi, G. S., & Jung, S.-M.', venue: 'IEEE Access', date: 'Nov 2021', href: 'https://ieeexplore.ieee.org/document/9620107', logo: '/media/ieee_logo.svg' },
+      { slug: 'purdue-drone-privacy-2024', title: 'Evaluating Privacy Infringement Level in Drone-Captured Images Using Privacy Image Quality Assessment Algorithms', authors: 'Jo, J., et al.', venue: 'Purdue University Research', date: 'Jun 2024', details: 'Led the research and paper writing as team leader', logo: '/media/purdue_logo.png', sidebarMedia: [{ src: '/media/purdue-1.png', alt: 'Purdue Publication 1' }, { src: '/media/purdue-2.png', alt: 'Purdue Publication 2' }, { src: '/media/purdue-3.png', alt: 'Purdue Publication 3' }] },
+      { slug: 'offroad-farm-robot-2023', title: 'A Deep Reinforcement Learning Framework Considering Off-road Driving Environment for Autonomous Farm Robot', authors: 'Jo, J., et al.', venue: 'KIIT Conference', logo: '/media/kiit_logo.png', date: 'Nov 2023', details: 'Gold Award, Undergraduate Thesis Competition' },
+      { slug: 'sentiment-aware-crawling-ieee-2021', title: 'Efficient Sentiment-Aware Web Crawling Methods for Constructing Sentiment Dictionary', authors: 'On, B.-W., Jo, J.-Y., Shin, H., Gim, J., Choi, G. S., & Jung, S.-M.', venue: 'IEEE Access', date: 'Nov 2021', logo: '/media/ieee_logo.svg' },
       { slug: 'shortform-subtitle-jkiit-2021', title: 'Subtitle Automatic Extraction System for Short-form Contents', authors: 'Jo, J., Gim, J., On, B.-W., & Jeong, D.', venue: 'Journal of KIIT', logo: '/media/kiit_logo.png', date: 'Jun 2021', href: 'https://doi.org/10.14801/jkiit.2021.19.6.29' }
     ],
     trackSummary: [
@@ -117,14 +117,14 @@ export const dict = {
       },
       { 
         id: 'TRANSFER',
-        title: '강건한 Sim-to-Real', images: ['/media/offroad-rl-origin.gif', '/media/dreamerv2-eval.png'], 
+        title: '강건한 Sim-to-Real', images: ['/media/screen_record_20231005.gif', '/media/dreamerv2-eval.png'], 
         description: '가상 환경에서 학습된 지능이 물리적 제약 조건을 극복하고 현장에 배치(Deployment)되도록 구현합니다.',
         label: 'SIM → REAL',
         projects: ['Off-Road and Bokbunja', 'dreamerv2', '2stepED']
       },
       { 
         id: 'AMPLIFY',
-        title: '실질적 효용의 창출', images: ['/media/zone-layout.png', '/media/navy_cert_dashboard.png', '/media/snappo-memory-1.jpeg'], 
+        title: '실질적 효용의 창출', images: ['/media/2steped-distribution.png', '/media/navy_cert_dashboard.png', '/media/snappo-memory-1.jpeg'], 
         description: '단순한 알고리즘을 넘어 실제 산업 현장의 결핍을 메우는 배포 가능한 수준의 시스템을 구축합니다.',
         label: 'AI → PHYSICAL IMPACT',
         projects: ['Samsung SDS', 'Navy CERT', 'Snappo']
