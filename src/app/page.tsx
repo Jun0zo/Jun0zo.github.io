@@ -268,7 +268,7 @@ function DetailSidebar({ selectedItem, controls, onClose }: { selectedItem: Deta
 export default function Home() {
   const [lang, setLang] = useState<'ko' | 'en'>('ko');
   const [selectedItem, setSelectedItem] = useState<any>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [activeSection, setActiveSection] = useState<string>('top');
   const [mounted, setMounted] = useState(false);
   const [portfolioControls, setPortfolioControls] = useState<PortfolioControls>(() => normalizePortfolioControls(DEFAULT_PORTFOLIO_CONTROLS));
@@ -304,8 +304,9 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     setPortfolioControls(loadPortfolioControls());
-    const savedTheme = localStorage.theme || 'dark';
+    const savedTheme = localStorage.theme === 'dark' ? 'dark' : 'light';
     setTheme(savedTheme);
+    localStorage.theme = savedTheme;
     document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     const syncPortfolioControls = () => setPortfolioControls(loadPortfolioControls());
     window.addEventListener('storage', syncPortfolioControls);
@@ -353,8 +354,8 @@ export default function Home() {
                 <div className="flex gap-4">{[{ href: "https://github.com/Jun0zo", icon: GithubIcon, title: "GitHub" }, { href: "https://www.linkedin.com/in/jun0zo", icon: LinkedinIcon, title: "LinkedIn" }, { href: "https://joon0zo.tistory.com", icon: BookOpen, title: "Tistory" }].map((btn, i) => (<a key={i} href={btn.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#FF6B4A] transition-all active:scale-95" title={btn.title}><btn.icon size={22} /></a>))}</div>
               </div>
             </div>
-            <div className="hidden lg:flex lg:flex-1 justify-center">
-              <div className="relative w-full max-w-[550px] aspect-square object-cover">
+            <div className="flex lg:flex-1 justify-center w-full mt-12 lg:mt-0">
+              <div className="relative w-full max-w-[380px] lg:max-w-[550px] aspect-square object-cover">
                 {/* Image with enhanced circular misty mask */}
                 <div 
                   className="relative w-full h-full"
@@ -367,7 +368,7 @@ export default function Home() {
                     src={sitePath("/media/hero_me.jpeg")} 
                     alt="Junyoung Jo" 
                     fill 
-                    className="object-cover object-center scale-125"
+                    className="object-cover object-center scale-110 sm:scale-[1.15] lg:scale-125"
                     priority
                   />
                 </div>
