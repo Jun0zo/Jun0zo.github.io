@@ -27,7 +27,7 @@ import {
   loadPortfolioControls,
   normalizePortfolioControls,
 } from "@/data/portfolioControls";
-import ChatBot from "@/components/ChatBot";
+// import ChatBot from "@/components/ChatBot";
 
 // --- Inline Custom Brand Icons ---
 const GithubIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
@@ -600,7 +600,7 @@ export default function Home() {
           )}
         </AnimatePresence>
       </div>
-      <ChatBot />
+      {/* <ChatBot /> */}
     </main>
   );
 }
