@@ -33,7 +33,7 @@ jobs:
 
       - name: Build static site
         env:
-          NEXT_PUBLIC_SITE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_SITE_PATH: ""
         run: npm run build
 
       - name: Setup Pages
