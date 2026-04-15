@@ -532,42 +532,18 @@ export default function Home() {
                                 if (visiblePubMedia.length === 0) return null;
 
                                 return (
-                                  <div className="hidden lg:grid grid-cols-3 gap-4 w-full h-[180px] items-center">
-                                    {visiblePubMedia.length >= 3 ? (
-                                      <>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5 object-cover">
-                                          <img src={visiblePubMedia[0].src} alt={visiblePubMedia[0].alt} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500 delay-150" />
-                                        </div>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5 object-cover">
-                                          <img src={visiblePubMedia[1].src} alt={visiblePubMedia[1].alt} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500 delay-75" />
-                                        </div>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5 object-cover">
-                                          <img src={visiblePubMedia[2].src} alt={visiblePubMedia[2].alt} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" />
-                                        </div>
-                                      </>
-                                    ) : visiblePubMedia.length > 0 ? (
-                                      visiblePubMedia.map((m, i) => (
-                                        <div key={i} className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5 object-cover">
-                                          <img src={m.src} alt={m.alt} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" />
-                                        </div>
-                                      )).concat(Array.from({ length: 3 - visiblePubMedia.length }).map((_, i) => (
-                                        <div key={`empty-${i}`} className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-dashed border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/[0.02] flex items-center justify-center object-cover">
-                                          <ImageIcon size={20} className="text-gray-300 dark:text-gray-700" />
-                                        </div>
-                                      )))
-                                    ) : (
-                                      <>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-dashed border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/[0.02] flex items-center justify-center object-cover">
-                                          <ImageIcon size={20} className="text-gray-300 dark:text-gray-700" />
-                                        </div>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-dashed border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/[0.02] flex items-center justify-center object-cover">
-                                          <ImageIcon size={20} className="text-gray-300 dark:text-gray-700" />
-                                        </div>
-                                        <div className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-dashed border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/[0.02] flex items-center justify-center object-cover">
-                                          <ImageIcon size={20} className="text-gray-300 dark:text-gray-700" />
-                                        </div>
-                                      </>
-                                    )}
+                                  <div className={`hidden lg:grid gap-4 w-full h-[180px] items-center ${
+                                    visiblePubMedia.length === 1 ? "grid-cols-1" : 
+                                    visiblePubMedia.length === 2 ? "grid-cols-2" : "grid-cols-3"
+                                  }`}>
+                                    {visiblePubMedia.slice(0, 3).map((m, i) => (
+                                      <div key={i} className="w-full h-full relative rounded-3xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5">
+                                        <img src={m.src} alt={m.alt} className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" />
+                                      </div>
+                                    ))}
+                                  </div>
+                                );
+                              })()}
                                   </div>
                                 );
                               })()}
