@@ -33,21 +33,21 @@ export const dict = {
       { 
         id: 'STRUCTURE', images: ['/media/screenshot-2026-04-05-pm-11.15.53.png'],
         title: 'Organizing Human Context', 
-        description: 'I translate messy human experience into structured knowledge graphs. Context is the raw material of intelligence.',
+        description: '',
         label: 'HUMAN → CONTEXT',
         projects: ['InsightFlow', 'TechGraph', 'openfolio']
       },
       { 
-        id: 'TRANSFER', images: ['/media/screenshot-2026-04-15-am-12.03.11.png', '/media/screen_record_20231005.gif', '/media/screenshot-2026-04-15-am-12.03.41.png'],
+        id: 'TRANSFER', images: ['/media/screenshot-2026-04-15-am-12.03.11.png', '/media/screen-record-2023-06-02-am-3.18.17.gif', '/media/screenshot-2026-04-15-am-12.03.41.png'],
         title: 'Seamless Intelligence Migration', 
-        description: 'I bridge the gap between human intent and machine execution. Zero-loss transfer of tacit judgment.',
+        description: '',
         label: 'CONTEXT → MACHINE',
         projects: ['Off-Road and Bokbunja', 'dreamerv2', '2stepED']
       },
       { 
         id: 'AMPLIFY', images: ['/media/KakaoTalk_Photo_2026-04-14-23-16-39.png', '/media/KakaoTalk_Photo_2026-04-15-11-58-11.png', '/media/kakao_video_20260414.gif'],
         title: 'Scaling Human Capability', 
-        description: 'I build the leverage that empowers individuals. Machines don’t replace you; they amplify you.',
+        description: '',
         label: 'MACHINE → AMPLIFIED RESULT',
         projects: ['Samsung SDS', 'Navy CERT', 'Snappo']
       }
@@ -127,21 +127,21 @@ export const dict = {
       { 
         id: 'STRUCTURE',
         title: '인간 지식의 지능화', images: ['/media/screenshot-2026-04-05-pm-11.15.53.png'], 
-        description: '현장의 암묵지와 운영 노하우를 정교한 데이터와 보상 함수로 정식화합니다. 맥락은 지능을 만드는 원재료입니다.',
+        description: '',
         label: 'DOMAIN → INTELLIGENCE',
         projects: ['InsightFlow', 'TechGraph', 'openfolio']
       },
       { 
         id: 'TRANSFER',
-        title: '강건한 Sim-to-Real', images: ['/media/screenshot-2026-04-15-am-12.03.11.png', '/media/screen_record_20231005.gif', '/media/screenshot-2026-04-15-am-12.03.41.png'], 
-        description: '가상 환경에서 학습된 지능이 물리적 제약 조건을 극복하고 현장에 배치(Deployment)되도록 구현합니다.',
+        title: '강건한 Sim-to-Real', images: ['/media/screenshot-2026-04-15-am-12.03.11.png', '/media/screen-record-2023-06-02-am-3.18.17.gif', '/media/screenshot-2026-04-15-am-12.03.41.png'], 
+        description: '',
         label: 'SIM → REAL',
         projects: ['Off-Road and Bokbunja', 'dreamerv2', '2stepED']
       },
       { 
         id: 'AMPLIFY',
         title: '실질적 효용의 창출', images: ['/media/KakaoTalk_Photo_2026-04-14-23-16-39.png', '/media/KakaoTalk_Photo_2026-04-15-11-58-11.png', '/media/kakao_video_20260414.gif'], 
-        description: '단순한 알고리즘을 넘어 실제 산업 현장의 결핍을 메우는 배포 가능한 수준의 시스템을 구축합니다.',
+        description: '',
         label: 'AI → PHYSICAL IMPACT',
         projects: ['Samsung SDS', 'Navy CERT', 'Snappo']
       }
@@ -160,7 +160,7 @@ export const dict = {
     ],
     experienceData: [
       { slug: 'sds', period: '2025.02 - 2026.02', company: 'Samsung SDS', logo: '/media/samsungsdsa_logo.webp', role: 'Data Analyst / Logistics System Optimization Intern', summary: 'SAP와 Plus WMS 데이터를 연동해 출고 가시성을 확보하고 지게차 동선을 최소화하는 재배치(Re-zoning) 알고리즘을 제안했습니다. 작업자들이 지키는  안전 거리나 우선순위와 같은 현장의 암묵지가 시스템 성능에 결정적임을 확인했으며, 이는 표준운영절차(SOP)와 인간의 노하우를 어떻게 기계의 보상 함수(Reward Function)로 정식화할 것인가에 대한 통찰로 이어졌습니다.', outcomes: ['창고 레이아웃 재배치 시뮬레이션 설계 및 입출고 프로세스 전산화, 재고 흐름 구조 개선', '현장 표준운영 절차(SOP) 분석 및 개선을 통해 동일한 SOP가 현장마다 다르게 실행되는 문제 확인', '운영 맥락(Context)과 작업자 판단이 시스템에 반영되지 않는 구조적 한계를 인식', '체류 비용(Detention cost) 약 90% 절감 및 재고 조사 정확도 98.7% 달성'], stack: ['WMS', 'SAP', 'layout validation', 'SOP systems'], visual: { src: '/media/zone-layout.png', alt: 'Zone Layout Editor' }, sidebarMedia: [{ src: '/media/screenshot-2026-04-13-am-1.02.44.png', alt: 'Samsung SDS Detail 1' }, { src: '/media/screenshot-2026-04-13-am-12.50.56.png', alt: 'Samsung SDS Detail 2' }], hiddenMedia: ['/media/zone-layout.png'] },
-      { slug: 'navy-cert', period: '2021.06 - 2023.01', company: 'R.O.K. Navy Cyber Operations Center', logo: '/media/cyber_op_logo.svg', role: 'Information Security Engineer', summary: '국방망 대상 실시간 보안 관제 및 위협 탐지 시스템을 운영했습니다. 무중단 군사 작전을 보장하기 위해 Log4j 취약점 등 미션 크리티컬한 사고 대응을 수행했습니다.', outcomes: ['대규모 네트워크 로그 기반 이상 탐지 및 실시간 위협 모니터링, 대응 프로세스 운영', '노이즈가 포함된 고빈도 이벤트 환경에서 의미 있는 신호를 추출하고 실시간 의사결정 수행', '실시간 시스템에서 불완전 정보 기반 의사결정 구조에 대한 이해 확보', '해군참모총장상(2022) 및 해군사이버작전센터장상(2023)'], stack: ['Security Operations', 'Network Monitoring', 'Threat Detection'] , visual: { src: '/media/navy_cert_dashboard.png', alt: '해군 사이버 위협 통합 관제망 대시보드' } }
+      { slug: 'navy-cert', period: '2021.06 - 2023.01', company: 'R.O.K. Navy Cyber Operations Center', logo: '/media/cyber_op_logo.svg', role: 'Information Security Engineer', summary: '국방망 대상 실시간 보안 관제 및 위협 탐지 시스템을 운영했습니다. 무중단 군사 작전을 보장하기 위해 Log4j 취약점 등 미션 크리티컬한 사고 대응을 수행했습니다.', outcomes: ['대규모 네트워크 로그 기반 이상 탐지 및 실시간 위협 모니터링, 대응 프로세스 운영', '노이즈가 포함된 고빈도 이벤트 환경에서 의미 있는 신호를 추출하고 실시간 의사결정 수행', '실시간 시스템에서 불완전 정보 기반 의사결정 구조에 대한 이해 확보', '해군참모총장상(2022) 해군사이버작전센터장상(2023)'], stack: ['Security Operations', 'Network Monitoring', 'Threat Detection'] , visual: { src: '/media/navy_cert_dashboard.png', alt: '해군 사이버 위협 통합 관제망 대시보드' } }
     ],
     projectData: [
       { slug: 'offroad-bokbunja', period: '2023 - 2024', track: 'robotics autonomy', title: '자율주행 및 복 분자 농업 로봇', role: '리드 연구원', hook: '가상 지능이 현실의 불확실성을 이겨내고 작동하게 만드는 Sim-to-Real 전이에 집중했습니다.', summary: '비정형 환경의 로봇 제어를 위해 Dreamer 알고리즘 기반 시뮬레이션 지능을 구축하고, 이를 험지의 슬립(Slip)과 관성 데이터로 보정해 Sim-to-Real Gap을 극복했습니다. ROS2 기반의 GPS·마커 융합 제어와 실제 복분자 농장에서의 LiDAR SLAM 자율주행 실험을 통해 하드웨어와 소프트웨어 통합 시스템 리딩  능력을 증명했습니다.', outcomes: ['오프로드 강화학습을 위한 Unity 시뮬레이션 환경 구축', '농업 로봇 배포를 위한 YOLO 및 LiDAR 기반 내비게이션 적용'], stack: ['Unity', 'RL', 'YOLO', 'LiDAR'], visual: { src: '/media/offroad-rl-origin.gif', alt: 'Off-road RL visualization' }, sidebarMedia: [{ src: '/media/offroad-rl-origin.gif', alt: 'Off-road RL visualization', caption: 'DQN / attention visualization artifact' }, { src: '/media/dreamerv2-eval.png', alt: 'DreamerV2 evaluation panel', caption: 'World-model RL evaluation context' }], evidence: ['KIIT 2023 RL Attention 및 Off-road 논문과 연결', 'KIIT 대학생논문경진대회 금상 수상', 'JunOS cluster: Simulation-Based Robot Learning and RL Visualization'], related: ['Project Experience - dreamerv2', 'Project Experience - visualize_dqn_simulation', 'Project Experience - Off-Road and Bokbunja'], links: [{ label: 'dreamerv2 repository', href: 'https://github.com/Jun0zo/dreamerv2' }, { label: 'DQN visualization repository', href: 'https://github.com/Jun0zo/visualize_dqn_simulation' }] },
