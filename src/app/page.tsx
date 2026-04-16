@@ -238,7 +238,9 @@ function DetailSidebar({ selectedItem, controls, onClose }: { selectedItem: Deta
       ) : null}
 
       <div className="w-24 h-1.5 bg-[#FF6B4A] mb-16 rounded-full" />
-      {summaryText && <p className="text-2xl md:text-3xl text-gray-900 dark:text-white leading-tight font-black mb-16 break-keep italic">"{summaryText}"</p>}
+      {summaryText && summaryText !== '""' && (
+        <p className="text-2xl md:text-3xl text-gray-900 dark:text-white leading-tight font-black mb-16 break-keep italic">"{summaryText}"</p>
+      )}
       <div className="space-y-16">
         {selectedItem.stack && getContentVisible(controls, itemId, "stack") && (<div><h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-400 mb-8">System Stack</h4><div className="flex flex-wrap gap-3">{selectedItem.stack.map((s) => <span key={s} className="px-5 py-2.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl text-sm font-bold text-gray-700 dark:text-gray-300">{s}</span>)}</div></div>)}
         <DetailList title="Performance & Proof" items={proofItems} />
@@ -436,9 +438,11 @@ export default function Home() {
                     )}
                     <h3 className="text-3xl md:text-4xl font-black uppercase italic mb-8 break-keep">{overriddenItem.id}</h3>
                     <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 break-keep">{overriddenItem.title}</p>
-                    <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed break-keep font-medium italic">
-                      "{overriddenItem.description}"
-                    </p>
+                    {overriddenItem.description && (
+                      <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed break-keep font-medium italic">
+                        "{overriddenItem.description}"
+                      </p>
+                    )}
                     {overriddenItem.projects && (
                       <div className="flex flex-wrap gap-2 mt-8">
                         {item.projects.map((p: string, i: number) => (
