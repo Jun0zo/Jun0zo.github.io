@@ -9,7 +9,7 @@ import {
   BookOpen, Sun, Moon, Share2, Bot,
   Trophy, X, ArrowRight, Zap, User, Network,
   Layers, Sparkles, UserCheck, Medal,
-  ImageIcon, ExternalLink
+  ImageIcon, ExternalLink, GraduationCap
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { dict, type Project } from "@/data/portfolio";
@@ -352,7 +352,7 @@ export default function Home() {
               <h1 className="text-3xl md:text-6xl font-black tracking-tight leading-[0.9] mb-10 italic uppercase">Turning <span className="text-[#FF6B4A]">Context</span> into <br/> Intelligence.</h1>              <p className="max-w-2xl text-lg md:text-xl text-gray-500 dark:text-gray-400 font-medium break-keep mb-12 leading-relaxed italic">"{t.hero.desc}"</p>
               <div className="flex items-center gap-6">
                 <Link href="#experience" className="px-10 py-4 rounded-full bg-[#FF6B4A] font-black uppercase text-xs tracking-widest text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#FF6B4A]/20">View Experience</Link>
-                <div className="flex gap-4">{[{ href: "https://github.com/Jun0zo", icon: GithubIcon, title: "GitHub" }, { href: "https://scholar.google.com/citations?user=_26OqXcAAAAJ&hl=ko", icon: (props: any) => (<BookOpen {...props} />), title: "Google Scholar" }, { href: "https://www.linkedin.com/in/jun0zo", icon: LinkedinIcon, title: "LinkedIn" }, { href: "https://joon0zo.tistory.com", icon: BookOpen, title: "Tistory" }].map((btn, i) => (<a key={i} href={btn.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#FF6B4A] transition-all active:scale-95" title={btn.title}><btn.icon size={22} /></a>))}</div>
+                <div className="flex gap-4">{[{ href: "https://github.com/Jun0zo", icon: GithubIcon, title: "GitHub" }, { href: "https://scholar.google.com/citations?user=_26OqXcAAAAJ&hl=ko", icon: GraduationCap, title: "Google Scholar" }, { href: "https://www.linkedin.com/in/jun0zo", icon: LinkedinIcon, title: "LinkedIn" }, { href: "https://joon0zo.tistory.com", icon: BookOpen, title: "Tistory" }].map((btn, i) => (<a key={i} href={btn.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#FF6B4A] transition-all active:scale-95" title={btn.title}><btn.icon size={22} /></a>))}</div>
               </div>
             </div>
             <div className="hidden lg:flex lg:flex-1 justify-center">
