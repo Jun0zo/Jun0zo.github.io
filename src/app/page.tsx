@@ -554,8 +554,8 @@ export default function Home() {
           {/* Contact Section */}
         <section id="contact" className="bg-gray-900 text-white py-40 text-center">
           <div className="mx-auto max-w-3xl px-6">
-            <h2 className="text-4xl font-black mb-10 break-keep tracking-tighter uppercase italic">{t.section.contactTitle}</h2>
-            <p className="text-lg text-gray-400 mb-16 break-keep font-medium italic opacity-80">"{t.section.contactDesc}"</p>
+            
+            
             <a href="mailto:joon0zo1022@gmail.com" className="text-3xl font-black text-[#FF6B4A] hover:text-white transition-all underline underline-offset-[12px] decoration-white/10 hover:decoration-[#FF6B4A]/50">joon0zo1022@gmail.com</a>
           </div>
         </section>
