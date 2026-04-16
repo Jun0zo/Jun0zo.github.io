@@ -457,12 +457,6 @@ export default function Home() {
               </div>
             </div>
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="p-12 md:p-20 rounded-[60px] bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 text-center relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF6B4A] to-transparent opacity-50" />
-              <p className="text-xl md:text-3xl font-black italic text-gray-800 dark:text-gray-200 leading-snug break-keep">
-                {t.section.philosophyQuote}
-              </p>
-            </motion.div>
           </div>
         </section>
 
