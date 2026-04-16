@@ -437,7 +437,6 @@ export default function Home() {
                       </div>
                     )}
                     <h3 className="text-3xl md:text-4xl font-black uppercase italic mb-8 break-keep">{overriddenItem.id}</h3>
-                    <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 break-keep">{overriddenItem.title}</p>
                     {overriddenItem.description && (
                       <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed break-keep font-medium italic">
                         "{overriddenItem.description}"
