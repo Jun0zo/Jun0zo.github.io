@@ -14,6 +14,7 @@ export const dict = {
       title: 'Transforming Human Domain Knowledge into Physical Intelligence.',
       desc: "I want to research ways to translate tacit field knowledge and operational context into intelligence that robots can understand.",
       btnGithub: 'GitHub Profile',
+      btnScholar: 'Google Scholar',
       btnExp: 'View Experience',
     },
     section: {
@@ -80,7 +81,7 @@ export const dict = {
       { slug: 'promptaes', period: '2024', track: 'research ai', title: 'PromptAES', role: 'Researcher', hook: 'Can large language models grade essays fairly without fine-tuning?', summary: 'Researched prompt-based automated essay scoring models to evaluate educational content efficiently.', outcomes: ['Automated essay score calculation pipeline'], stack: ['LLM', 'Prompt Engineering', 'Python'], visual: { src: '/media/promptaes-tsne.png', alt: 'PromptAES t-SNE visualization' }, sidebarMedia: [{ src: '/media/promptaes-tsne.png', alt: 'PromptAES t-SNE visualization', caption: 'Embedding structure view' }, { src: '/media/promptaes-prompt1.png', alt: 'PromptAES prompt score plot', caption: 'Prompt-level score distribution' }], evidence: ['JunOS node: Project Experience - PromptAES', 'Prompt-aware AES follow-up experiments', 'Related to the R2C / writing evaluation research line'], related: ['Project Experience - 2stepED', 'Project Experience - promptaes_web', 'Publication - NAACL Findings - R2C'], visible: false }
     ],
     publicationData: [
-      { slug: 'aes-multilayer-encoders', title: 'Automated Essay Scoring based on Multi-layer Encoders', authors: 'Jo, J., et al.', venue: "EMNLP", date: '2026', details: 'Currently under review for EMNLP 2026. Proposes a novel AES framework utilizing multi-layer encoder architectures to capture hierarchical creativity and coherence in student essays.', logo: '/media/Gemini_Generated_Image_tz1hvgtz1hvgtz1h.png', sidebarMedia: [{ src: '/media/screenshot-2026-04-14-am-11.57.06.png', alt: 'AES Detail 1' }, { src: '/media/screenshot-2026-04-14-am-11.57.29.png', alt: 'AES Detail 2' }, { src: '/media/screenshot-2026-04-14-am-11.57.49.png', alt: 'AES Detail 3' }] },
+      { slug: 'aes-multilayer-encoders', title: 'Automated Essay Scoring based on Multi-layer Encoders', authors: 'Jo, J., et al.', venue: "EMNLP", date: '2026', details: 'Currently under review for EMNLP 2026. Proposes a novel AES framework utilizing multi-layer encoder architectures to capture hierarchical creativity and coherence in student essays.', logo: '/media/Gemini_Generated_Image_tz1hvgtz1hvgtz1h.png', href: 'https://openreview.net/forum?id=D1gIWlY4tp#discussion', sidebarMedia: [{ src: '/media/screenshot-2026-04-14-am-11.57.06.png', alt: 'AES Detail 1' }, { src: '/media/screenshot-2026-04-14-am-11.57.29.png', alt: 'AES Detail 2' }, { src: '/media/screenshot-2026-04-14-am-11.57.49.png', alt: 'AES Detail 3' }] },
       { slug: 'r2c-naacl-2025', title: 'Representation-to-Creativity (R2C): Automated Holistic Scoring Model for Essay Creativity', authors: 'Kim, D., Jo, J., On, B.-W., & Lee, I.', venue: 'Findings of ACL: NAACL', date: 'Apr 2025', logo: '/media/naacl_logo.png', href: 'https://aclanthology.org/2025.findings-naacl.292/', sidebarMedia: [{ src: '/media/screenshot-2026-04-13-am-12.44.53.png', alt: 'R2C Detail 1' }, { src: '/media/screenshot-2026-04-13-am-12.45.08.png', alt: 'R2C Detail 2' }] },
       { 
         slug: 'purdue-drone-privacy-2024', title: 'Evaluating Privacy Infringement Level in Drone-Captured Images Using Privacy Image Quality Assessment Algorithms', authors: 'Jo, J., et al.', venue: 'Purdue University Research', date: 'Jun 2024', details: 'Led the research and paper writing as team leader', logo: '/media/purdue_logo.png', 
@@ -108,6 +109,7 @@ export const dict = {
       title: '인간의 도메인 지식을 물리적 지능으로 변환(Transform)하여 실세계의 문제를 해결합니다.',
       desc: "현장의 암묵지와 운영 맥락을 로봇이 이해할 수 있는 지능으로 바꾸는 연구를 하고 싶습니다.",
       btnGithub: 'GitHub 프로필',
+      btnScholar: 'Google Scholar',
       btnExp: '경력 및 프로젝트 보기',
     },
     section: {
